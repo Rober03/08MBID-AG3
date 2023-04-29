@@ -40,7 +40,8 @@ d3.json(
 d3.text(
   'https://raw.githubusercontent.com/Rober03/08MBID-AG3/main/AG3_Datos_Caja_Bigotes.txt',
   function (data) {
-    data = eval(data);
+
+    var data = JSON.parse(data.replace(/^var data = /, ''));;
 
     console.log('hola', data);
 
@@ -52,16 +53,6 @@ d3.text(
       .id('name')
       .x('year')
       .y('value')
-      .config({
-        boxplotWidth: 40, // ancho de la caja
-        boxplotWhiskerWidth: 2, // ancho de las líneas de los bigotes
-        boxplotOutlierSize: 2, // tamaño de los puntos de los valores atípicos (outliers)
-        boxplotFillColor: '#e5e5e5', // color de fondo de la caja
-        boxplotStrokeColor: '#999999', // color del borde de la caja y de las líneas de los bigotes
-        boxplotOutlierColor: '#999999', // color de los puntos de los valores atípicos (outliers)
-        xAxis: false, // desactivar eje X
-        yAxis: false, // desactivar eje Y
-      })
       .draw();
   }
 );
