@@ -42,6 +42,8 @@ d3.text(
   function (data) {
     data = eval(data);
 
+    console.log('hola', data);
+
     var visualization = d3plus
       .viz()
       .container('#viz3')
