@@ -3,6 +3,9 @@ h2 {
   font-family: Lato;
 }
 
-.negrita {
-  font-weight: bold;
+#viz1,
+#viz2,
+#viz3 {
+  width: 80%;
+  height: 300px;
 }
